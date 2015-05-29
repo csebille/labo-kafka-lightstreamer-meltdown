@@ -14,6 +14,9 @@ import java.util.Properties;
 
 public class SimpleConsumer {
   
+  private static boolean
+  
+  
   public static void main(String[] args) {     
     Properties props = new Properties();
     props.setProperty("metadata.broker.list","localhost:9092");
@@ -21,14 +24,18 @@ public class SimpleConsumer {
     Producer producer = new Producer(conf, "clientId", "topic", "key");
     try {    
       // Use a byte buffer to store your data, and pass the data by referencing that.
-      byte[] buffer = new byte[1024];
-      while ( fillBuffer() ) { // Get some data in your buffer
-      producer.send(buffer, offset, length);
+      byte[] buffer = "This is the data sent to Kafka".getBytes();
+
+      int offset=0;      
+      int length=1;
+      while ( offset+length <=  buffer.length())  { // Get some data in your buffer
+        producer.send(buffer, offset, length);
+        offset = length + 1;
+      }
     }  finally {
       producer.close();
     }
-  }
-  
+  }  
 }
 
 
