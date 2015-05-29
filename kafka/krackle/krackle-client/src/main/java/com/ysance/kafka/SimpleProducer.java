@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.Properties;
 
 public class SimpleConsumer {
-  
+
   
   public static void main(String[] args) {     
     Properties props = new Properties();
