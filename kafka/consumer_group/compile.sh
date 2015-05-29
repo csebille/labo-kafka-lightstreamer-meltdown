@@ -1,0 +1,5 @@
+
+javac -classpath .:/opt/dev/kafka/kafka_libs/jopt-simple-3.2.jar:/opt/dev/kafka/kafka_libs/kafka_2.10-0.8.2.0.jar:/opt/dev/kafka/kafka_libs/kafka-clients-0.8.2.0.jar:/opt/dev/kafka/kafka_libs/log4j-1.2.16.jar:/opt/dev/kafka/kafka_libs/lz4-1.2.0.jar:/opt/dev/kafka/kafka_libs/metrics-core-2.2.0.jar:/opt/dev/kafka/kafka_libs/scala-library-2.10.4.jar:/opt/dev/kafka/kafka_libs/slf4j-api-1.7.6.jar:/opt/dev/kafka/kafka_libs/slf4j-log4j12-1.6.1.jar:/opt/dev/kafka/kafka_libs/snappy-java-1.1.1.6.jar:/opt/dev/kafka/kafka_libs/zkclient-0.3.jar:/opt/dev/kafka/kafka_libs/zookeeper-3.4.6.jar ConsumerGroupExample.java
+
+
+java -classpath .:/opt/dev/kafka/kafka_libs/slf4j-api-1.7.6.jar:/opt/dev/kafka/kafka_libs/slf4j-log4j12-1.6.1.jar:/opt/dev/kafka/kafka_libs/metrics-core-2.2.0.jar:/opt/dev/kafka/kafka_libs/zkclient-0.3.jar:/opt/dev/kafka/kafka_libs/zookeeper-3.4.6.jar:/opt/dev/kafka/kafka_libs/log4j-1.2.16.jar:/opt/dev/kafka/kafka_libs/kafka_2.10-0.8.2.0.jar:/opt/dev/kafka/kafka_libs/kafka-clients-0.8.2.0.jar:/opt/dev/kafka/kafka_libs/scala-library-2.10.4.jar  ConsumerGroupExample localhost:2181 10001 test 1 60
