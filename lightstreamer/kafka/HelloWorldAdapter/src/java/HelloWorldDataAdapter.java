@@ -91,7 +91,21 @@ public class HelloWorldDataAdapter implements SmartDataProvider {
                   Map<String, String> data = new HashMap<String, String>();
                   // the first bytesRead bytes of the buffer are the message.
                   //System.out.println(new String(buffer,0, bytesRead));
-                  data.put("message", new String(buffer,0, bytesRead));
+
+                  //data.put("message", new String(buffer,0, bytesRead));
+                  data.put("message",   new String(buffer,0,  67));
+                  data.put("message_1", new String(buffer,68, 67));
+                  data.put("message_2", new String(buffer,136, 67));
+                  data.put("message_3", new String(buffer,204, 67));
+                  data.put("message_4", new String(buffer,272, 67));
+                  data.put("message_5", new String(buffer,340, 67));
+                  data.put("message_6", new String(buffer,408, 67));
+                  data.put("message_7", new String(buffer,476, 67));
+                  data.put("message_8", new String(buffer,544, 67));
+                  data.put("message_9", new String(buffer,712, 67));
+                  data.put("message10", new String(buffer,780, 67));
+                  data.put("message11", new String(buffer,848, 67));
+                  data.put("message12", new String(buffer,916, 67));
                   data.put("timestamp", new Date().toString());
                   listener.smartUpdate(itemHandle, data, false);
                 }

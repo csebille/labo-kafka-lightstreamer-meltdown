@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<!--
+  LIGHTSTREAMER - www.lightstreamer.com
+  Hello World Tutorial 
+  
+  Copyright 2013 Weswit s.r.l.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<html>
+  <head>
+    <title>Hello World with Lightstreamer</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/require.js/1.0.7/require.min.js"></script>
+    <script src="lightstreamer.js"></script>
+  </head>
+
+  <body>
+    <div data-source="lightstreamer" data-grid="hellogrid" data-item="greetings" data-field="message">loading...</div>
+    <div data-source="lightstreamer" data-grid="hellogrid" data-item="greetings" data-field="message_1">loading...</div>
+    <div data-source="lightstreamer" data-grid="hellogrid" data-item="greetings" data-field="message_2">loading...</div>
+    <div data-source="lightstreamer" data-grid="hellogrid" data-item="greetings" data-field="message_3">loading...</div>
+    <div data-source="lightstreamer" data-grid="hellogrid" data-item="greetings" data-field="message_4">loading...</div>
+    <div data-source="lightstreamer" data-grid="hellogrid" data-item="greetings" data-field="message_5">loading...</div>
+    <div data-source="lightstreamer" data-grid="hellogrid" data-item="greetings" data-field="message_6">loading...</div>
+    <div data-source="lightstreamer" data-grid="hellogrid" data-item="greetings" data-field="message_7">loading...</div>
+    <div data-source="lightstreamer" data-grid="hellogrid" data-item="greetings" data-field="message_8">loading...</div>
+    <div data-source="lightstreamer" data-grid="hellogrid" data-item="greetings" data-field="message_9">loading...</div>
+    <div data-source="lightstreamer" data-grid="hellogrid" data-item="greetings" data-field="message10">loading...</div>
+    <div data-source="lightstreamer" data-grid="hellogrid" data-item="greetings" data-field="message11">loading...</div>
+    <div data-source="lightstreamer" data-grid="hellogrid" data-item="greetings" data-field="message12">loading...</div>
+    <div data-source="lightstreamer" data-grid="hellogrid" data-item="greetings" data-field="timestamp">loading...</div>
+
+    <script>
+      require(["LightstreamerClient","Subscription","StaticGrid"],function(LightstreamerClient,Subscription,StaticGrid) {
+        var client = new LightstreamerClient(null,"HELLOWORLD");
+        client.connect();
+         
+        var grid = new StaticGrid("hellogrid",true);
+        
+        var subscription = new Subscription("MERGE",grid.extractItemList(),grid.extractFieldList());
+        subscription.addListener(grid);
+        
+        client.subscribe(subscription);
+      });
+    </script>
+  </body>
+</html>
+
+
+
+
